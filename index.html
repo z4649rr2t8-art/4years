@@ -1,0 +1,173 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>4 YEARS</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e6e7eb;color:#171719;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Apple SD Gothic Neo",sans-serif}
+.wrap{min-height:100svh;display:grid;place-items:center;padding:18px}.device{width:min(402px,100%);height:min(870px,calc(100svh - 24px));min-height:650px;background:#111;border-radius:54px;padding:9px;box-shadow:0 28px 80px #0004;position:relative}.screen{height:100%;border-radius:45px;overflow:hidden;position:relative;background:#f5f5f7}
+.island{position:absolute;z-index:30;top:9px;left:50%;transform:translateX(-50%);width:118px;height:34px;background:#050505;border-radius:22px;transition:.25s}.island:active{width:160px}
+.status{position:absolute;z-index:31;top:0;left:0;right:0;height:35px;padding:9px 22px 0;display:flex;justify-content:space-between;font-size:12px;font-weight:700;pointer-events:none;color:#111}.status.light{color:white}
+.wallpaper{position:absolute;inset:0;background:linear-gradient(150deg,#d6c6c1,#c4c9d9 48%,#9eafbd)}.lock{position:absolute;inset:0;z-index:20;color:white;background:#777}.lock>img{width:100%;height:100%;object-fit:cover;object-position:center 38%;position:absolute}.locknotif{display:none}.lock:after{content:"";position:absolute;inset:0;background:linear-gradient(#0005,transparent 40%,#0005)}.lockdate,.locktime,.locknotif,.lockbottom{position:absolute;z-index:2}.lockdate{top:93px;width:100%;text-align:center;font-size:16px;text-shadow:0 1px 8px #0008}.locktime{top:112px;width:100%;text-align:center;font-size:82px;line-height:1.1;font-weight:650;letter-spacing:-5px;text-shadow:0 2px 12px #0006}.locknotif{top:255px;left:13px;right:13px;padding:12px 14px;border-radius:18px;background:#ffffffe0;color:#222;backdrop-filter:blur(18px);font-size:13px;text-align:left}.locknotif b{font-size:12px}.locknotif p{margin:5px 0 0}.lockbottom{bottom:31px;left:27px;right:27px;display:flex;justify-content:space-between}.circle{height:43px;width:43px;border-radius:50%;background:#ffffff44;display:grid;place-items:center;font-size:18px}
+.home{position:absolute;inset:0;display:none;overflow:hidden}.home.on{display:block}.homephoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78)}.hdate,.htime{color:white;text-shadow:0 2px 9px #0008}.widget{background:#ffffffc9}.hdate{position:absolute;top:69px;left:23px;font-size:15px}.htime{position:absolute;top:88px;left:22px;font-size:58px;font-weight:650;letter-spacing:-3px}.widgets{position:absolute;top:176px;left:17px;right:17px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.widget{height:95px;border-radius:19px;background:#ffffffb8;backdrop-filter:blur(15px);padding:12px;font-size:11px;color:#333}.widget strong{display:block;font-size:15px;margin-bottom:6px}.icons{position:absolute;top:295px;left:17px;right:17px;display:grid;grid-template-columns:repeat(4,1fr);gap:19px 7px}.app{border:0;background:none;display:flex;align-items:center;flex-direction:column;gap:5px;font-size:10px;color:#222}.ico{width:53px;height:53px;border-radius:15px;display:grid;place-items:center;font-size:26px;box-shadow:0 3px 9px #0002}.dock{position:absolute;bottom:24px;left:13px;right:13px;height:72px;border-radius:24px;background:#ffffff8c;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-around}
+.homebar{position:absolute;z-index:40;bottom:7px;left:50%;transform:translateX(-50%);height:5px;width:116px;border-radius:8px;background:#111}.homebar.white{background:white}
+.appview{position:absolute;inset:0;z-index:10;background:#f5f5f7;display:none;flex-direction:column}.appview.show{display:flex;animation:open .2s ease-out}@keyframes open{from{transform:scale(.97);opacity:.6}to{transform:scale(1);opacity:1}}
+.appstatus{height:45px;flex:none;padding:8px 22px 0;font-size:12px;font-weight:700;display:flex;justify-content:space-between;background:#fafafa}.appnav{height:49px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 15px;background:#fafafa;border-bottom:1px solid #e6e6e8}.appnav button{background:none;border:0;color:#1677d2;font-size:15px}.appnav strong{font-size:16px}.appcontent{flex:1;overflow:auto}.homeindicator{height:23px;flex:none;display:grid;place-items:center;background:inherit}.homeindicator i{width:115px;height:5px;background:#111;border-radius:5px}
+.listrow{display:flex;align-items:center;gap:11px;padding:12px 14px;background:#fff;border-bottom:1px solid #eee;width:100%;text-align:left}.avatar{width:49px;height:49px;border-radius:50%;object-fit:cover;background:#eee;flex:none}.rowtext{flex:1;min-width:0}.rowtext b{font-size:14px}.preview{font-size:12px;color:#999;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tinytime{font-size:10px;color:#aaa;align-self:flex-start}
+.search{margin:10px 13px;width:calc(100% - 26px);border:0;border-radius:9px;background:#eee;padding:9px 12px}
+.kakao{height:100%;display:flex;flex-direction:column;background:#abc0d2}.roomtop{height:53px;flex:none;display:flex;align-items:center;gap:8px;padding:0 12px;background:#abc0d2;border-bottom:1px solid #98adbd}.roomtop button{border:0;background:none;font-size:22px}.roomtop img{width:31px;height:31px;border-radius:50%;object-fit:cover}.roomtop b{font-size:15px;flex:1}.msgs{flex:1;overflow:auto;padding:13px 10px;display:flex;flex-direction:column;gap:10px}.day{align-self:center;background:#8197a999;color:#fff;border-radius:20px;padding:5px 11px;font-size:10px;margin:5px 0 9px}.line{display:flex;gap:6px;align-items:flex-end;max-width:92%}.line.in{align-self:flex-start}.line.out{align-self:flex-end;flex-direction:row-reverse}.miniava{width:29px;height:29px;border-radius:50%;object-fit:cover}.msgbody{display:flex;flex-direction:column;gap:3px;max-width:calc(100% - 38px)}.sender{font-size:10px;color:#45515c;margin-left:2px}.bubble{padding:9px 11px;background:white;border-radius:4px 14px 14px 14px;font-size:13px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}.out .bubble{background:#fee500;border-radius:14px 4px 14px 14px}.time{font-size:9px;color:#506070}.replybox{background:#f8f8f8;border-top:1px solid #ddd;padding:9px 9px 12px;display:flex;flex-wrap:wrap;gap:7px;flex:none}.replybox button{border:1px solid #ddd;background:white;border-radius:18px;padding:8px 11px;font-size:11px;text-align:left}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.gallery img{width:100%;aspect-ratio:1;object-fit:cover}.simple{padding:14px}.tile{background:white;border-radius:14px;padding:14px;margin-bottom:10px;font-size:13px;line-height:1.6}.profile{min-height:100%;display:flex;align-items:center;flex-direction:column;padding:30px;background:#f7f7f7}.profile img{width:92px;height:92px;border-radius:50%;object-fit:cover}.profile b{margin-top:12px}.profile small{color:#999;margin-top:5px}.profile button{margin-top:24px;border:0;border-radius:20px;background:white;padding:10px 24px}
+.cc{position:absolute;inset:0;z-index:35;display:none;background:#dfe4edee;backdrop-filter:blur(24px);padding:70px 18px 20px}.cc.show{display:block}.ccgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.ccbox{background:#ffffffa8;border-radius:20px;padding:18px;min-height:90px;font-size:13px}.cc button{margin-top:15px;border:0;background:#fff;border-radius:18px;padding:10px 15px}
+
+.pinpanel{display:none !important;position:absolute;z-index:4;top:120px;left:0;right:0;flex-direction:column;align-items:center;color:white;text-shadow:0 1px 7px #0009}.lock.entering .pinpanel{display:flex !important}.lock.entering .lockdate,.lock.entering .locktime,.lock.entering .lockbottom{display:none}.lock.entering>img{filter:blur(9px) brightness(.65);transform:scale(1.04)}.pinlabel{font-size:16px;margin-bottom:14px}.pindots{font-size:19px;letter-spacing:4px;height:27px}.pinhint{height:19px;font-size:11px;margin-top:2px}.keypad{width:220px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px 14px;margin-top:10px}.keypad button{height:48px;width:48px;border-radius:50%;border:1px solid #ffffff9c;background:#ffffff26;color:white;font-size:22px;justify-self:center;backdrop-filter:blur(8px)}.keypad button.empty{visibility:hidden}.keypad button:active{background:#ffffff75}
+.incomingbanner{margin:10px 13px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid #e9e9e9;font-size:12px;line-height:1.5;cursor:pointer}.incomingbanner b{font-size:12px}
+.pushnote{position:absolute;z-index:60;top:48px;left:12px;right:12px;min-height:66px;padding:11px 13px;border:1px solid #ffffff80;border-radius:18px;background:#f4f4f4ed;backdrop-filter:blur(22px);box-shadow:0 5px 22px #0002;display:none;align-items:center;gap:10px;text-align:left;color:#171717}.pushnote.visible{display:flex}.pushicon{width:36px;height:36px;border-radius:10px;background:#ffdf32;display:grid;place-items:center;font-size:20px;flex-shrink:0}.pushcopy{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}.pushcopy b{font-size:12px}.pushcopy span{font-size:12px;white-space:normal}.pushtime{font-size:10px;color:#777;align-self:flex-start}
+@keyframes sceneFade{0%{opacity:1}45%{opacity:0}100%{opacity:1}}.scene-fade{animation:sceneFade 1.4s ease-in-out}\n</style></head><body><div class="wrap"><div class="device"><div class="screen" id="screen">
+<div class="wallpaper"></div><div class="status light" id="status"><span id="clock">09:41</span><span>▮▮▮　Wi‑Fi　78%</span></div><div class="island" id="island"></div><button id="pushnote" class="pushnote"></button>
+<div class="lock" id="lock"><img src="assets/photo_19.jpeg"><div class="lockdate" id="lockdate">11월 8일 일요일<br><small>재현이와 함께한 지 1,795일 🧡</small></div><div class="locktime" id="lockclock">09:41</div><button class="locknotif" id="notif"><b>💬 재현이🧡 · 지금</b><p>자기 모해 ㅎㅎ<br>일어났어?? 나 심심한데</p></button><div class="pinpanel" id="pinpanel"><div class="pinlabel">암호를 입력하십시오</div><div class="pindots" id="pindots">○　○　○　○</div><div class="pinhint" id="pinhint"> </div><div class="keypad" id="keypad"><button data-digit="1">1</button><button data-digit="2">2</button><button data-digit="3">3</button><button data-digit="4">4</button><button data-digit="5">5</button><button data-digit="6">6</button><button data-digit="7">7</button><button data-digit="8">8</button><button data-digit="9">9</button><button class="empty"></button><button data-digit="0">0</button><button id="pinDelete">⌫</button></div></div><div class="lockbottom"><div class="circle">🔦</div><div class="circle">📷</div></div></div>
+<div class="home" id="home"><img class="homephoto" src="assets/photo_19.jpeg" alt=""><div class="hdate">일요일, 11월 8일</div><div class="htime" id="hclock">09:41</div><div class="icons" id="icons"></div><div class="dock" id="dock"></div></div>
+<div class="appview" id="view"><div class="appstatus"><span id="appclock">09:41</span><span>▮▮▮　Wi‑Fi　78%</span></div><div class="appnav"><button id="back">‹</button><strong id="apptitle">카카오톡</strong><button id="right">편집</button></div><div class="appcontent" id="content"></div><div class="homeindicator"><i></i></div></div>
+<div class="cc" id="cc"><div class="ccgrid"><div class="ccbox">✈️　비행기 모드<br><br>📶　Wi-Fi　　Bluetooth</div><div class="ccbox">🔆 밝기<br><br>🔉 음량</div><div class="ccbox">집중 모드　🌙</div><div class="ccbox">화면 미러링</div></div><button id="ccclose">닫기</button></div>
+<div class="homebar" id="homebar"></div></div></div></div>
+<script>
+const photos=Array.from({length:19},(_,i)=>`assets/photo_${String(i+1).padStart(2,'0')}.jpeg`);
+const apps=[['카카오톡','💬','#fee500','chat'],['인스타그램','📷','#f4d6e8','insta'],['사진','🌈','#fff','photos'],['전화','📞','#b8e6b2','phone'],['사파리','🧭','#d9efff','safari'],['유튜브','▶️','#ffd9d9','youtube'],['메시지','💬','#b8e6b2','disabled'],['날씨','☀️','#cce8ff','disabled'],['캘린더','📅','#fff','calendar'],['시계','🕒','#eee','clock']];
+const people={jae:{name:'재현이🧡',img:photos[0],label:'영어교육과'},dong:{name:'김동현',img:photos[14],label:'경영학과'},mom:{name:'엄마',img:null,label:'가족'},group:{name:'경영학과 단톡방',img:null,label:'단체 채팅'}};
+const seedChats={
+jae:[
+{from:'in',text:'자기야 머해',date:'2026년 11월 7일',time:'오전 10:10'},
+{from:'out',text:'아까 일어났어',date:'2026년 11월 7일',time:'오전 10:12'},
+{from:'in',text:'그랬구낭',date:'2026년 11월 7일',time:'오전 10:12'},
+{from:'in',text:'이따 가치 밥 머글까??',date:'2026년 11월 7일',time:'오전 10:12'},
+{from:'out',text:'웅 강의 끝나고 연락할게',date:'2026년 11월 7일',time:'오전 10:13'},
+{from:'in',text:'자기 일어났어?',date:'2026년 11월 8일',time:'오전 9:41'}
+],
+dong:[],
+group:[
+{from:'in',text:'[공지] 다음 주 마케팅원론 팀 과제 안내입니다.',date:'2026년 11월 7일',time:'오후 3:20'},
+{from:'in',text:'자료는 단톡방 공지에 올려두었습니다. 확인 부탁드립니다!',date:'2026년 11월 7일',time:'오후 3:21'},
+{from:'out',text:'확인했습니다!',date:'2026년 11월 7일',time:'오후 3:25'}
+],
+mom:[
+{from:'in',text:'아들 밥은 먹었어?',date:'2026년 11월 7일',time:'오후 6:10'},
+{from:'out',text:'응 엄마 먹었어 ㅎㅎ',date:'2026년 11월 7일',time:'오후 6:14'},
+{from:'in',text:'그래~ 요즘 날 추우니까 따뜻하게 입고 다녀',date:'2026년 11월 7일',time:'오후 6:15'}
+]
+};
+const storageKey='4years-kakao-history-v4';
+let chatRecords;
+try{chatRecords=JSON.parse(localStorage.getItem(storageKey))||structuredClone(seedChats)}catch(e){chatRecords=JSON.parse(JSON.stringify(seedChats))}
+function saveChats(){try{localStorage.setItem(storageKey,JSON.stringify(chatRecords))}catch(e){}}
+const chatLabels={jae:'재현이🧡',dong:'동현',group:'경영학과 단톡방',mom:'엄마'};
+const flowKey='4years-story-flow-v1';
+let storyFlow=localStorage.getItem(flowKey)||'start';
+function setFlow(v){storyFlow=v;try{localStorage.setItem(flowKey,v)}catch(e){}}
+function notify(from,preview,target){
+ const n=$('pushnote');n.innerHTML=`<div class="pushicon">💬</div><div class="pushcopy"><b>${chatLabels[from]}</b><span>${preview}</span></div><span class="pushtime">지금</span>`;
+ n.classList.add('visible');n.onclick=()=>{n.classList.remove('visible');room(target)};
+}
+let key='jae';
+const $=id=>document.getElementById(id);
+function avatar(k,cls='avatar'){let p=people[k];return p.img?`<img class="${cls}" src="${p.img}">`:`<span class="${cls}" style="display:grid;place-items:center;background:#eee">🌷</span>`}
+function show(title,html){$('apptitle').textContent=title;$('content').innerHTML=html;$('view').classList.add('show');$('home').classList.remove('on')}
+function goHome(){$('view').classList.remove('show');$('cc').classList.remove('show');$('home').classList.add('on')}
+function chatList(){
+ const order=['jae','dong','group','mom'];
+ show('카카오톡',`<input class="search" placeholder="🔍 검색"><div>${order.map(k=>{let arr=chatRecords[k],last=arr[arr.length-1];return `<button class="listrow" data-chat="${k}">${avatar(k)}<span class="rowtext"><b>${chatLabels[k]}</b><div class="preview">${last?last.text:''}</div></span><span class="tinytime">${last?last.time:''}</span></button>`}).join('')}</div>`);
+}
+function room(k){key=k;
+ if(k==='dong'&&storyFlow==='waiting-dong'&&!chatRecords.dong.some(m=>m.from==='in'&&m.text==='오늘 강의 끝나고 잠깐 카페가서 얘기할 수 있어요? 저 고민상담 해주세요오..')){
+  chatRecords.dong.push({from:'in',text:'오늘 강의 끝나고 잠깐 카페가서 얘기할 수 있어요? 저 고민상담 해주세요오..',date:'2026년 11월 8일',time:'오전 10:02'});saveChats();
+ }
+ drawRoom()}
+function drawRoom(){
+ let p=people[key],records=chatRecords[key]||[];
+ show('카카오톡',`<div class="kakao"><div class="roomtop"><button id="roomback">‹</button>${avatar(key,'')}<b>${chatLabels[key]||p.name}</b><button>☰</button></div><div class="msgs" id="msgs"></div><div class="replybox" id="reply"></div></div>`);
+ $('roomback').onclick=chatList;
+ let box=$('msgs'),lastDate='';
+ records.forEach(m=>{
+   if(m.date!==lastDate){let d=document.createElement('div');d.className='day';d.textContent=m.date;box.appendChild(d);lastDate=m.date}
+   addMsg(m.from,m.text,m.time);
+ });
+ box.scrollTop=box.scrollHeight;
+ let choice='';
+ if(key==='jae' && storyFlow==='start' && records.some(m=>m.from==='in'&&m.text==='자기 일어났어?') && !records.some(m=>m.from==='out'&&m.text==='엉 일어낫어')) choice='엉 일어낫어';
+ else if(key==='dong' && storyFlow==='waiting-dong'){
+   if(!records.some(m=>m.from==='in'&&m.text==='오늘 강의 끝나고 잠깐 카페가서 얘기할 수 있어요? 저 고민상담 해주세요오..')) choice='';
+   else if(!records.some(m=>m.from==='out'&&m.text==='알겠어 강의 끝나고 보자')) choice='알겠어 강의 끝나고 보자';
+ } else if(key==='jae' && storyFlow==='waiting-jae' && records.some(m=>m.from==='in'&&m.text==='오늘 강의 끝나고 뭐해?') && !records.some(m=>m.from==='out'&&m.text==='아 약속 있어서 저녁에 내가 연락할겡!')) choice='아 약속 있어서 저녁에 내가 연락할겡!';
+ $('reply').innerHTML=choice?`<button data-pick="0">${choice}</button>`:'';
+}
+function addMsg(from,text,stamp=null){
+ let p=people[key],box=$('msgs'),line=document.createElement('div');
+ line.className='line '+(from==='in'?'in':'out');
+ line.innerHTML=`${from==='in'?avatar(key,'miniava'):''}<div class="msgbody">${from==='in'?`<div class="sender">${(chatLabels[key]||p.name).replace('🧡','')}</div>`:''}<div class="bubble"></div></div><span class="time">${stamp||''}</span>`;
+ line.querySelector('.bubble').textContent=text;box.appendChild(line);box.scrollTop=box.scrollHeight;
+}
+function pick(i){
+ if(i!==0)return;
+ const date='2026년 11월 8일';
+ let message;
+ if(key==='jae' && chatRecords.jae.some(m=>m.from==='in'&&m.text==='자기 일어났어?') && !chatRecords.jae.some(m=>m.from==='out'&&m.text==='엉 일어낫어')){
+   message={from:'out',text:'엉 일어낫어',date,time:'오전 9:43'};
+   chatRecords.jae.push(message);saveChats();addMsg('out',message.text,message.time);$('reply').innerHTML='';
+   setFlow('waiting-dong');setTimeout(()=>notify('dong','선배 오늘 강의 끝나고 잠깐 카페가서 얘기할 수 있어요? 저 고민상담 해주세요오..','dong'),650);
+   return;
+ } 
+ if(key==='dong' && storyFlow==='waiting-dong' && !chatRecords.dong.some(m=>m.from==='in'&&m.text==='오늘 강의 끝나고 잠깐 카페가서 얘기할 수 있어요? 저 고민상담 해주세요오..')){
+   const incoming={from:'in',text:'오늘 강의 끝나고 잠깐 카페가서 얘기할 수 있어요? 저 고민상담 해주세요오..',date,time:'오전 10:02'};
+   chatRecords.dong.push(incoming);saveChats();addMsg('in',incoming.text,incoming.time);
+   $('reply').innerHTML='<button data-pick="0">알겠어 강의 끝나고 보자</button>';
+   return;
+ }
+ if(key==='dong' && storyFlow==='waiting-dong' && !chatRecords.dong.some(m=>m.from==='out'&&m.text==='알겠어 강의 끝나고 보자')){
+   message={from:'out',text:'알겠어 강의 끝나고 보자',date,time:'오전 10:04'};
+   chatRecords.dong.push(message);saveChats();addMsg('out',message.text,message.time);$('reply').innerHTML='';
+   const incoming={from:'in',text:'오늘 강의 끝나고 뭐해?',date,time:'오전 10:06'};
+   chatRecords.jae.push(incoming);saveChats();setFlow('waiting-jae');
+   setTimeout(()=>notify('jae',incoming.text,'jae'),650);
+   return;
+ }
+ if(key==='jae' && storyFlow==='waiting-jae' && !chatRecords.jae.some(m=>m.from==='out'&&m.text==='아 약속 있어서 저녁에 내가 연락할겡!')){
+   message={from:'out',text:'아 약속 있어서 저녁에 내가 연락할겡!',date,time:'오전 10:07'};
+   chatRecords.jae.push(message);saveChats();addMsg('out',message.text,message.time);$('reply').innerHTML='';setFlow('done');
+ }
+}
+function photosPage(){show('사진',`<div class="simple"><div class="tile"><b>최근 항목</b><br>사진 19장</div><div class="gallery">${photos.map((p,i)=>`<img src="${p}">`).join('')}</div></div>`)}
+function openApp(id){
+ if(id==='disabled')return;
+ if(id==='youtube'){window.open('https://www.youtube.com/','_blank');return}
+ if(id==='chat'){chatList();return}
+ if(id==='photos'){photosPage();return}
+ if(id==='calendar'){show('캘린더',`<div class="simple"><div class="tile"><b>2026년 11월</b><p>11월 8일 · 오늘</p><hr><b>2026년 12월</b><p>12월 9일 · 재현이와 4주년 🧡</p></div></div>`);return}
+ if(id==='safari'){show('Safari',`<div class="simple"><div class="tile">검색 기록</div>${['성수 분위기 좋은 카페','남친 선물추천','데이트 코스 추천'].map(x=>`<div class="listrow">${x}</div>`).join('')}`);return}
+ if(id==='phone'){show('전화',`<div class="simple"><div class="tile"><b>연락처</b></div>${['재현이🧡','김동현','엄마','아빠','형','김운학','이상혁','한동민','김은석','강우현','문서진','허진수','김현진'].map(x=>`<div class="listrow">${x}</div>`).join('')}`);return}
+ if(id==='insta'){instagramHome();return}
+ show(id==='clock'?'시계':'설정','<div class="simple"><div class="tile">보기 전용</div></div>');
+}
+function instagramHome(){
+ const post=['insta_post_1.jpeg','insta_post_2.jpeg','insta_post_3.jpeg','insta_post_4.jpeg'];
+ show('Instagram',`<div style="background:#fff;min-height:100%;color:#161616">
+ <div style="padding:13px 15px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;font-weight:700">Instagram <span>＋　♡　✉</span></div>
+ <div style="padding:18px 15px"><div style="display:flex;gap:24px;align-items:center"><div style="width:78px;height:78px;border-radius:50%;background:#eee;display:grid;place-items:center;font-size:32px">👤</div><div style="flex:1"><b style="font-size:15px">sxng.h</b><div style="display:flex;justify-content:space-between;margin-top:12px;font-size:12px"><span><b>1</b><br>게시물</span><span><b>156</b><br>팔로워</span><span><b>156</b><br>팔로잉</span></div></div></div>
+ <div style="font-size:12px;margin-top:12px">비공개 계정</div><div style="display:flex;gap:8px;margin-top:14px"><button style="flex:1;padding:8px;border:0;border-radius:8px;background:#eee">프로필 편집</button><button style="padding:8px;border:0;border-radius:8px;background:#eee">공유</button></div>
+ <div style="display:flex;gap:18px;padding:15px 0;border-bottom:1px solid #eee;font-size:12px"><span>▦ 게시물</span><span onclick="showStoryList()" style="cursor:pointer">◉ 스토리</span><span>♡</span></div>
+ <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">${post.map(x=>`<img src="assets/${x}" style="width:100%;aspect-ratio:1;object-fit:cover">`).join('')}</div>
+ <div style="padding:10px 12px;font-size:12px"><b>런던🕶️</b><div style="margin-top:5px">❤️ 123　　댓글 숨김　　공유 1</div></div>
+ <div style="display:flex;justify-content:space-around;padding:14px;border-top:1px solid #eee;font-size:20px"><span>⌂</span><span>⌕</span><span>＋</span><span>♡</span><span>👤</span></div></div></div>`);
+}
+function showStoryList(){show('스토리',`<div class="simple">${[['성호','sungho_story.jpeg'],['재현','jae_story.jpeg'],['동현','dong_story.jpeg']].map(([n,f])=>`<div class="tile" onclick="showStory('${f}','${n}')">${n}　스토리 보기</div>`).join('')}</div>`);}
+function showStory(file,name){show(name+' · 스토리',`<div style="height:100%;background:#111;display:grid;place-items:center"><img src="assets/${file}" style="max-width:100%;max-height:100%;object-fit:contain"></div>`);}
+
+$('icons').innerHTML=apps.map(a=>`<button class="app" data-app="${a[3]}"><span class="ico" style="background:${a[2]}">${a[1]}</span>${a[0]}</button>`).join('');
+$('dock').innerHTML=[apps[1],apps[0],apps[3],apps[6]].map(a=>`<button class="app" data-app="${a[3]}"><span class="ico" style="background:${a[2]}">${a[1]}</span></button>`).join('');
+$('screen').addEventListener('click',e=>{let a=e.target.closest('[data-app]');if(a)openApp(a.dataset.app);let c=e.target.closest('[data-chat]');if(c)room(c.dataset.chat);let p=e.target.closest('[data-pick]');if(p)pick(+p.dataset.pick)});
+
+$('back').onclick=goHome;
+$('homebar').onclick=()=>{if($('cc').classList.contains('show'))$('cc').classList.remove('show');else goHome()};
+$('status').addEventListener('click',()=>{$('cc').classList.toggle('show')});$('ccclose').onclick=()=>$('cc').classList.remove('show');
+let pin='';
+$('lock').addEventListener('click',e=>{if(e.target.closest('#keypad')||e.target.closest('#pinDelete'))return;$('lock').classList.add('entering');});
+function updatePin(){ $('pindots').textContent=['○','○','○','○'].map((v,i)=>i<pin.length?'●':'○').join('　'); }
+function unlock(){ $('lock').style.display='none';$('home').classList.add('on');$('status').classList.remove('light'); }
+$('keypad').addEventListener('click',e=>{let b=e.target.closest('[data-digit]');if(!b)return;if(pin.length<4){pin+=b.dataset.digit;updatePin();if(pin.length===4){if(pin==='1209'){setTimeout(unlock,180)}else{ $('pinhint').textContent='암호가 올바르지 않습니다';setTimeout(()=>{$('pinhint').textContent='';pin='';updatePin()},650)}}}});
+$('pinDelete').onclick=()=>{pin=pin.slice(0,-1);updatePin()};
+function tick(){let d=new Date(),t=d.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false});['clock','hclock','lockclock','appclock'].forEach(id=>$(id).textContent=t);let ld=$('lockdate');if(ld)ld.textContent=d.toLocaleDateString('ko-KR',{month:'long',day:'numeric',weekday:'long'})}
+tick();setInterval(tick,30000);
+</script></div></div></div></body></html>
